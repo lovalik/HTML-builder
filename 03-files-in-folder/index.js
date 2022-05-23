@@ -12,8 +12,7 @@ fs.readdir(pathToFolder, 'UTF-8', (error, date) => {
       fs.stat( path.join(pathToFolder, file), 'utf-8', (error, stats) => {
         if (error) {
           console.log(error);
-        } else {
-          if ( !stats.isFile() ) return;
+        } else if (stats.isFile()) {
 
           const name = path.basename(path.join(pathToFolder, file), path.extname(file));
           const extension = path.extname(file).match(/[\w]{1,30}$/);

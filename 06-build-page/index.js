@@ -238,6 +238,8 @@ async function getComponentContent(file) {
             },
             (err) => console.log(`error in function getComponentContent____${err}`)
           );
+        } else {
+          resolve('done');
         }
       }
     );
